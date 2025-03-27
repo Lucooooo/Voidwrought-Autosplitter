@@ -7,7 +7,7 @@ This has been tested with the following versions:
 
 When it will be added you will be able to simply enable the Autosplitter in the LiveSplit Splits Editor (while having Voidwrought entered as game).
 
-Otherwise, you can also add it manually: [Download the script](), edit your LiveSplit Layout and add a Scriptable Autosplitter, then edit it's settings and select the downloaded file. Adding it manually can be useful if you want to edit the script yourself.
+Otherwise, you can also add it manually: [Download the script](https://raw.githubusercontent.com/Lucooooo/Voidwrought-Autosplitter/refs/heads/main/VoidwroughtAutosplitter.asl), edit your LiveSplit Layout and add a Scriptable Autosplitter, then edit it's settings and select the downloaded file. Adding it manually can be useful if you want to edit the script yourself.
 
 ## Usage
 
