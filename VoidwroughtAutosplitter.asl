@@ -7,7 +7,6 @@ state("Voidwrought")
 
 start
 {
-    print("[start] InGameTimer: " + current.inGameTimer);
     if (current.inGameTimer > 1 && old.inGameTimer == 1)
         return true;
 }
@@ -20,8 +19,5 @@ reset
 
 isLoading
 {
-    print("[isLoading] scenePrefix: " + current.scenePrefix);
-    print("[isLoading] isLoading: " + current.isLoading);
-    print("[isLoading] result: " + (current.scenePrefix == "Main" || current.isLoading));
     return current.scenePrefix == "Main" || current.isLoading;
 }
