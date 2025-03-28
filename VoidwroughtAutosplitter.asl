@@ -7,8 +7,13 @@ state("Voidwrought")
 
 start
 {
-    if (current.inGameTimer > 1 && old.inGameTimer == 1)
+    if (current.inGameTimer == 1 && old.inGameTimer != 1) {
+        if (settings["one_sec_startup"]) {
+            vars.PreviousOffset = timer.Run.Offset;
+            timer.Run.Offset = TimeSpan.FromSeconds(1);
+        }
         return true;
+    }
 }
 
 reset
@@ -19,5 +24,21 @@ reset
 
 isLoading
 {
-    return current.scenePrefix == "Main" || current.isLoading;
+    if (settings["pause_main_menu"] && current.scenePrefix == "Main")
+        return true;
+    else
+        return current.isLoading;
+}
+
+onStart
+{
+    if (settings["one_sec_startup"])
+        timer.Run.Offset = vars.PreviousOffset;
+}
+
+startup
+{
+    settings.Add("timer", true, "Timer adjustment");
+    settings.Add("pause_main_menu", false, "Pause the timer on main menu", "timer");
+    settings.Add("one_sec_startup", false, "Start the timer at 1 second", "timer");
 }
